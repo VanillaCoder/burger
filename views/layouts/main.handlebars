@@ -19,31 +19,31 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="col-md">
+			<div class="col-md-4">
 				hello my good friends! and welcome to the show!
 			</div>
-			<div class="col-md">
+			<div class="col-md-4">
 				<form>
 					<div class="form-group">
 						<label>Burger type:</label>
 						<input class="form-control" id="enterBurger" aria-describedby="emailHelp"
 							placeholder="Enter burger name">
 					</div>
-					<button class="btn btn-primary">Submit</button>
+					<button class="btn btn-primary" id="burgerButton">Submit</button>
 				</form>
 			</div>
-			<div class="col-md" id="testing">
+			<div class="col-md-4" id="testing">
 				another fucking column bro
 			</div>
 		</div>
 	</div>
-	{{!-- handlebars insert --}}
+	{{!-- handlebars --}}
 	{{{body}}}
 
 	{{!-- jquery for shit to work --}}
 	<script type="text/javascript">
-		$(".btn").on("click", function (event) {
-			event.preventDefault()
+		$("#burgerButton").on("click", function (event) {
+			
 			var input = {
 				type: $("#enterBurger").val().trim(),
 				eaten: false
@@ -57,7 +57,20 @@
 			}).then(function () {
 				console.log("Created new quote.")
 			})
+			location.reload();
 
+		})
+		$(".burgerBtn").on("click", function(event){
+			event.preventDefault()
+			var burgID = this.id;
+			var sendID = {burgID};
+			$.ajax("/api/burgers/id", {
+				type: "PUT",
+				data: sendID
+			}).then(function(){
+				console.log("Ate burger.")
+			})
+			location.reload();
 		})
 	</script>
 </body>

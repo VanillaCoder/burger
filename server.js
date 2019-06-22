@@ -33,16 +33,27 @@ require("./routes/api-routes.js")(app);
 // require("./routes/author-api-routes.js")(app);
 // require("./routes/post-api-routes.js")(app);
 
-app.get("/", function(req,res) {
-  var data = {};
-console.log(db.burgers);
-res.render("burgers", data)
-})
+var burg = [{
+  type: "blt",
+  eaten: false
+},
+{
+  type: "pbj",
+  eaten: true
+}
+]
 
+
+app.get("/", function (req, res) {
+  db.burgers.findAll({}).then(function(results){
+    res.render("burgers", {results: results})
+
+  })
+  }); 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
-db.sequelize.sync().then(function() {
-  app.listen(PORT, function() {
+db.sequelize.sync({force: true}).then(function () {
+  app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
   });
 });
