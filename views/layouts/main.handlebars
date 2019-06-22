@@ -29,7 +29,7 @@
 						<input class="form-control" id="enterBurger" aria-describedby="emailHelp"
 							placeholder="Enter burger name">
 					</div>
-					<button class="btn btn-primary" id="burgerButton">Submit</button>
+					<button class="btn btn-primary" href="/" id="burgerButton">Submit</button>
 				</form>
 			</div>
 			<div class="col-md-4" id="testing">
@@ -43,7 +43,7 @@
 	{{!-- jquery for shit to work --}}
 	<script type="text/javascript">
 		$("#burgerButton").on("click", function (event) {
-			
+
 			var input = {
 				type: $("#enterBurger").val().trim(),
 				eaten: false
@@ -56,21 +56,22 @@
 
 			}).then(function () {
 				console.log("Created new quote.")
+				location.reload();
+
 			})
-			location.reload();
 
 		})
-		$(".burgerBtn").on("click", function(event){
-			event.preventDefault()
+		$(".burgerBtn").on("click", function (event) {
 			var burgID = this.id;
-			var sendID = {burgID};
+			var sendID = { burgID };
 			$.ajax("/api/burgers/id", {
 				type: "PUT",
 				data: sendID
-			}).then(function(){
+			}).then(function () {
 				console.log("Ate burger.")
+				location.reload();
+
 			})
-			location.reload();
 		})
 	</script>
 </body>
