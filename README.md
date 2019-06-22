@@ -3,10 +3,10 @@
 
 <p>Screenshot of working app.</p>
 <p align="center">
-  <img alt="mySQL" src="https://github.com/VanillaCoder/burger/blob/master/images/front.png">
+  <img alt="mySQL" src="https://github.com/VanillaCoder/burger/blob/master/img/front.png">
 </p>
 
 <p>Backend API.</p>
 <p align="center">
-  <img alt="mySQL" src="https://github.com/VanillaCoder/burger/blob/master/images/api.png">
+  <img alt="mySQL" src="https://github.com/VanillaCoder/burger/blob/master/img/api.PNG">
 </p>
