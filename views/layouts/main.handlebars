@@ -19,8 +19,25 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-4">
-				hello my good friends! and welcome to the show!
+			<div class="col-md-12">
+				<div class="jumbotron jumbotron-fluid text-center">
+					<div class="container">
+						<h1 class="display-4">Burger DB</h1>
+						<p class="lead">Input types of burgers you want to eat. They will appear on the left waiting to be eaten!</p>
+						<form>
+							<div class="form-group">
+								<label>Burger type:</label>
+								<input class="form-control" id="enterBurger" aria-describedby="emailHelp"
+									placeholder="Enter burger name">
+							</div>
+							<button class="btn btn-primary" href="/" id="burgerButton">Submit</button>
+						</form>
+						{{!-- <button class="btn btn-primary" href="/" id="burgerButton">Submit</button> --}}
+
+					</div>
+				</div>
+			</div>
+			{{!-- <div class="col-md-4">
 			</div>
 			<div class="col-md-4">
 				<form>
@@ -33,8 +50,7 @@
 				</form>
 			</div>
 			<div class="col-md-4" id="testing">
-				another fucking column bro
-			</div>
+			</div> --}}
 		</div>
 	</div>
 	{{!-- handlebars --}}

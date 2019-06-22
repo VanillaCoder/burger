@@ -2,11 +2,12 @@
   <div class="row">
     {{!-- Fresh Burgers --}}
     <div class="col-md-4">
+      <p>Fresh burgers:</p>
       <ul>
         {{#each results}}
         {{#unless eaten}}
         <li>
-          <p>Burger Type: {{type}}</p>
+          <p>{{type}}</p>
           <p></p>
           <button class="btn btn-primary burgerBtn" id="{{id}}">Eat me!</button>
 
@@ -18,12 +19,12 @@
     <div class="col-md-4"></div>
     {{!-- Eaten Burgers --}}
     <div class="col-md-4">
+      <p>Eaten Burgers:</p>
       <ul id="eatenBurgers">
         {{#each results}}
         {{#if eaten}}
         <li>
-          <p>Burger Type: {{type}}</p>
-          <p>YOU ATE ME</p>
+          <p>{{type}}</p>
         </li>
         {{/if}}
         {{/each}}
