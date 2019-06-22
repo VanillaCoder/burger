@@ -1,0 +1,31 @@
+<div class="container">
+  {{!-- Burgers Not Eaten --}}
+  <div class="row">
+    <div class="col-6-md">
+      <div class="collection">
+        <ul>
+          {{#each burger}}
+          {{#unless eaten}}
+          <li>
+            <p>Type: {{this.type}}</p>
+            <p>Eaten: {{this.eaten}}</p>
+          </li>
+          {{/unless}}
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+    
+    {{!-- Burgers Eaten --}}
+    <div class="col-6-md">
+      <div class="collection">
+        {{#each burger}}
+        {{#if eaten}}
+        <p>Type: {{this.type}}</p>
+        <p>Eaten: {{this.eaten}}</p>
+        {{/if}}
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>
